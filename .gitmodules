@@ -1,3 +1,6 @@
 [submodule "rozdzial2"]
 	path = rozdzial2
 	url = https://github.com/krasztar/Literatura.git
+[submodule "Modele_fizyczne"]
+	path = Modele_fizyczne
+	url = https://github.com/krasztar/Modele_fizyczne.git
