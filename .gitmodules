@@ -4,3 +4,27 @@
 [submodule "Modele_fizyczne"]
 	path = Modele_fizyczne
 	url = https://github.com/krasztar/Modele_fizyczne.git
+[submodule "docs/source/rozdzial2/bezpieczenstwo"]
+	path = docs/source/rozdzial2/bezpieczenstwo
+	url = https://github.com/BlazejUl/bezpieczenstwo
+[submodule "docs/source/rozdzial2/Konfiguracja_baz_danych"]
+	path = docs/source/rozdzial2/Konfiguracja_baz_danych
+	url = https://github.com/Chaiolites/Konfiguracja_baz_danych
+[submodule "docs/source/rozdzial2/Sprzet-dla-bazy-danych"]
+	path = docs/source/rozdzial2/Sprzet-dla-bazy-danych
+	url = https://github.com/oszczeda/Sprzet-dla-bazy-danych
+[submodule "docs/source/rozdzial2/Wydajnosc_Skalowanie_i_Replikacja"]
+	path = docs/source/rozdzial2/Wydajnosc_Skalowanie_i_Replikacja
+	url = https://github.com/Broksonn/Wydajnosc_Skalowanie_i_Replikacja
+[submodule "docs/source/rozdzial2/repo-wspolne"]
+	path = docs/source/rozdzial2/repo-wspolne
+	url = https://github.com/GrzegorzSzczepanek/repo-wspolne
+[submodule "docs/source/rozdzial2/Partycjonowanie-danych"]
+	path = docs/source/rozdzial2/Partycjonowanie-danych
+	url = https://github.com/BartekHen/Partycjonowanie-danych
+[submodule "docs/source/rozdzial2/Kontrola_i_konserwacja"]
+	path = docs/source/rozdzial2/Kontrola_i_konserwacja
+	url = https://github.com/Pi0trM/Kontrola_i_konserwacja
+[submodule "docs/source/rozdzial2/Kopie_zapasowe_i_odzyskiwanie_danych"]
+	path = docs/source/rozdzial2/Kopie_zapasowe_i_odzyskiwanie_danych
+	url = https://github.com/m-smieja/Kopie_zapasowe_i_odzyskiwanie_danych
