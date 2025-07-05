@@ -90,6 +90,445 @@ Add your content using \sphinxcode{\sphinxupquote{reStructuredText}} syntax. See
 \sphinxhref{https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html}{reStructuredText}
 documentation for details.
 
+\sphinxstepscope
+
+
+\chapter{Wprowadzenie}
+\label{\detokenize{rozdzial1/index:wprowadzenie}}\label{\detokenize{rozdzial1/index::doc}}
+\sphinxAtStartPar
+Kurs: Bazy Danych 1
+
+\sphinxAtStartPar
+Prowadzący: Piotr Czaja
+
+\sphinxAtStartPar
+Autor: Kacper Rasztar
+
+\sphinxAtStartPar
+Sprawozdanie z kursu Bazy danych stanowiące podsumowanie pracy wykonanej indywidualnie. Dokumentacja obejmuje przegląd literaturowy dotyczący baz danych oraz autorski projekt bazy danych dla wędkarskiego sklepu internetowego. Projekt został szczegółowo omówiony na trzech poziomach: modelu konceptualnym, logicznym oraz fizycznym. Raport zawiera również analizę działania bazy danych oraz opis zastosowanych metod optymalizacji zapytań.
+
+\sphinxAtStartPar
+W trakcie realizacji projektu wykorzystano dwa systemy zarządzania bazami danych: PostgreSQL oraz LiteSQL. Całość dokumentacji została przygotowana przy użyciu narzędzia Sphinx, co zapewniło spójność oraz łatwość nawigacji po wszystkich częściach raportu.
+
+\sphinxstepscope
+
+
+\chapter{Modele Bazy Danych}
+\label{\detokenize{rozdzial3/index:modele-bazy-danych}}\label{\detokenize{rozdzial3/index::doc}}
+\sphinxAtStartPar
+Author: Kacper Rasztar
+
+
+\section{Wprowadzenie}
+\label{\detokenize{rozdzial3/index:wprowadzenie}}
+\sphinxAtStartPar
+W tym rozdziale przedstawiono modele bazy danych zaprojektowane i zaimplementowane w dwóch środowiskach: \sphinxstylestrong{SQLite} oraz \sphinxstylestrong{PostgreSQL}. Projekt dotyczy systemu sklepu wędkarskiego i obejmuje strukturę logiczną i fizyczną bazy danych, której celem jest zarządzanie produktami, klientami, zamówieniami oraz płatnościami.
+
+
+\section{Model Konceptualny}
+\label{\detokenize{rozdzial3/index:model-konceptualny}}
+\sphinxAtStartPar
+Baza danych składa się z 5 głównych tabel:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{klienci} \textendash{} zawiera dane użytkowników sklepu,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{produkty} \textendash{} przechowuje informacje o dostępnych towarach,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{zamówienia} \textendash{} reprezentuje zakupy klientów,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{płatności} \textendash{} powiązane z zamówieniami,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{kategorie} \textendash{} grupuje produkty według typów.
+
+\end{itemize}
+
+\sphinxAtStartPar
+Relacje:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Jeden klient może mieć wiele zamówień (relacja jeden\sphinxhyphen{}do\sphinxhyphen{}wielu),
+
+\item {} 
+\sphinxAtStartPar
+Każde zamówienie ma jedną płatność (relacja jeden\sphinxhyphen{}do\sphinxhyphen{}jednego),
+
+\item {} 
+\sphinxAtStartPar
+Produkty należą do jednej kategorii (relacja wiele\sphinxhyphen{}do\sphinxhyphen{}jednego).
+
+\end{itemize}
+
+
+\section{Model Logiczny}
+\label{\detokenize{rozdzial3/index:model-logiczny}}
+\sphinxAtStartPar
+\sphinxstylestrong{Tabela klienci}:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{id} \textendash{} liczba całkowita, klucz główny,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{imie} \textendash{} tekst,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{nazwisko} \textendash{} tekst,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{email} \textendash{} tekst (unikalny),
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{telefon} \textendash{} tekst,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{adres} \textendash{} tekst.
+
+\end{itemize}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Tabela produkty}:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{id} \textendash{} liczba całkowita, klucz główny,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{nazwa} \textendash{} tekst,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{opis} \textendash{} tekst,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{cena} \textendash{} liczba zmiennoprzecinkowa,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{stan\_magazynowy} \textendash{} liczba całkowita,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{kategoria\_id} \textendash{} liczba całkowita, klucz obcy.
+
+\end{itemize}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Tabela zamówienia}:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{id} \textendash{} liczba całkowita, klucz główny,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{klient\_id} \textendash{} liczba całkowita, klucz obcy,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{data\_zamowienia} \textendash{} data,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{status} \textendash{} tekst (np. ‘nowe’, ‘w\_realizacji’, ‘zrealizowane’).
+
+\end{itemize}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Tabela płatności}:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{id} \textendash{} liczba całkowita, klucz główny,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{zamowienie\_id} \textendash{} liczba całkowita, klucz obcy,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{kwota} \textendash{} liczba zmiennoprzecinkowa,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{metoda\_platnosci} \textendash{} tekst,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{data\_platnosci} \textendash{} data.
+
+\end{itemize}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Tabela kategorie}:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{id} \textendash{} liczba całkowita, klucz główny,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{nazwa} \textendash{} tekst,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{opis} \textendash{} tekst.
+
+\end{itemize}
+
+
+\section{Model Fizyczny}
+\label{\detokenize{rozdzial3/index:model-fizyczny}}
+\sphinxAtStartPar
+\sphinxstylestrong{Implementacja w SQLite}:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{TEXT} używany dla danych tekstowych (np. imie, nazwisko, email),
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{INTEGER} dla identyfikatorów i wartości liczbowych,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{REAL} dla cen i kwot,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{DATE} dla dat (przechowywane jako tekst w formacie ISO).
+
+\end{itemize}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Implementacja w PostgreSQL}:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{VARCHAR} dla tekstów (np. VARCHAR(100) dla nazw i emaili),
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{INTEGER} dla kluczy głównych i liczbowych pól,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{DECIMAL(10,2)} dla cen i kwot,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{DATE} dla dat,
+
+\item {} 
+\sphinxAtStartPar
+\sphinxtitleref{TEXT} dla dłuższych opisów i adresów.
+
+\end{itemize}
+
+\sphinxAtStartPar
+Relacje między tabelami zostały zaimplementowane przy użyciu kluczy obcych (FOREIGN KEY) oraz ograniczeń spójności.
+
+
+\section{Podsumowanie}
+\label{\detokenize{rozdzial3/index:podsumowanie}}
+\sphinxAtStartPar
+Zaprojektowana baza danych jest znormalizowana i zapewnia integralność danych oraz możliwość łatwego rozszerzania funkcjonalności sklepu internetowego. Obsługuje zarówno zapisywanie danych testowych, jak i ich import/eksport w różnych formatach (CSV, JSON).
+
+\sphinxstepscope
+
+
+\chapter{Analiza bazy danych oraz optymalizacja zapytań}
+\label{\detokenize{rozdzial4/index:analiza-bazy-danych-oraz-optymalizacja-zapytan}}\label{\detokenize{rozdzial4/index::doc}}
+\sphinxAtStartPar
+Autor: Kacper Rasztar
+
+
+\section{Wstęp}
+\label{\detokenize{rozdzial4/index:wstep}}
+\sphinxAtStartPar
+W tym rozdziale przeprowadzono analizę wydajności zapytań SQL oraz ocenę struktury bazy danych dla dwóch środowisk: SQLite oraz PostgreSQL. Analiza ta obejmuje ocenę szybkości działania zapytań, wykorzystania indeksów oraz potencjalnych możliwości optymalizacji.
+
+
+\section{Migracja danych między SQLite a PostgreSQL}
+\label{\detokenize{rozdzial4/index:migracja-danych-miedzy-sqlite-a-postgresql}}
+\sphinxAtStartPar
+Proces migracji między bazami wymaga odpowiedniego przekształcenia typów danych oraz dostosowania ograniczeń i struktur tabel.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Z SQLite do PostgreSQL:}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+TEXT \(\rightarrow\) VARCHAR, INTEGER \(\rightarrow\) SERIAL, REAL \(\rightarrow\) DECIMAL
+
+\item {} 
+\sphinxAtStartPar
+Eksport danych do plików CSV
+
+\item {} 
+\sphinxAtStartPar
+Import danych do PostgreSQL za pomocą \sphinxtitleref{COPY} lub pgloader
+
+\item {} 
+\sphinxAtStartPar
+Wprowadzenie kluczy obcych i ograniczeń
+
+\end{itemize}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Z PostgreSQL do SQLite:}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+SERIAL \(\rightarrow\) INTEGER PRIMARY KEY AUTOINCREMENT
+
+\item {} 
+\sphinxAtStartPar
+VARCHAR \(\rightarrow\) TEXT, DECIMAL \(\rightarrow\) REAL
+
+\item {} 
+\sphinxAtStartPar
+Eksport do CSV i import poprzez \sphinxtitleref{.import}
+
+\item {} 
+\sphinxAtStartPar
+Upraszczanie schematu (mniej restrykcyjne klucze)
+
+\end{itemize}
+
+\sphinxAtStartPar
+Wnioski:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+PostgreSQL zapewnia większą kontrolę nad typami i relacjami
+
+\item {} 
+\sphinxAtStartPar
+SQLite pozwala na szybsze prototypowanie, ale wymaga dodatkowej walidacji
+
+\end{itemize}
+
+
+\section{Analiza zapytania SQLuser\_price}
+\label{\detokenize{rozdzial4/index:analiza-zapytania-sqluser-price}}
+\sphinxAtStartPar
+Poniżej zaprezentowano zapytanie SQL, które oblicza sumę zakupów dla każdego użytkownika:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{SELECT}
+\PYG{+w}{    }\PYG{n}{u}\PYG{p}{.}\PYG{n}{imie}\PYG{+w}{ }\PYG{o}{|}\PYG{o}{|}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{} \PYGZsq{}}\PYG{+w}{ }\PYG{o}{|}\PYG{o}{|}\PYG{+w}{ }\PYG{n}{u}\PYG{p}{.}\PYG{n}{nazwisko}\PYG{+w}{ }\PYG{k}{AS}\PYG{+w}{ }\PYG{n}{nazwa\PYGZus{}uzytkownika}\PYG{p}{,}
+\PYG{+w}{    }\PYG{k}{SUM}\PYG{p}{(}\PYG{n}{p}\PYG{p}{.}\PYG{n}{cena}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{pz}\PYG{p}{.}\PYG{n}{ilosc}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{AS}\PYG{+w}{ }\PYG{n}{suma\PYGZus{}zakupow}
+\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Uzytkownicy}\PYG{+w}{ }\PYG{n}{u}
+\PYG{k}{JOIN}\PYG{+w}{ }\PYG{n}{Zamowienia}\PYG{+w}{ }\PYG{n}{z}\PYG{+w}{ }\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{u}\PYG{p}{.}\PYG{n}{id\PYGZus{}uzytkownika}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{z}\PYG{p}{.}\PYG{n}{id\PYGZus{}uzytkownika}
+\PYG{k}{JOIN}\PYG{+w}{ }\PYG{n}{PozycjeZamowienia}\PYG{+w}{ }\PYG{n}{pz}\PYG{+w}{ }\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{z}\PYG{p}{.}\PYG{n}{id\PYGZus{}zamowienia}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{pz}\PYG{p}{.}\PYG{n}{id\PYGZus{}zamowienia}
+\PYG{k}{JOIN}\PYG{+w}{ }\PYG{n}{Produkty}\PYG{+w}{ }\PYG{n}{p}\PYG{+w}{ }\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{pz}\PYG{p}{.}\PYG{n}{id\PYGZus{}produktu}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{.}\PYG{n}{id\PYGZus{}produktu}
+\PYG{k}{GROUP}\PYG{+w}{ }\PYG{k}{BY}\PYG{+w}{ }\PYG{n}{u}\PYG{p}{.}\PYG{n}{id\PYGZus{}uzytkownika}
+\PYG{k}{ORDER}\PYG{+w}{ }\PYG{k}{BY}\PYG{+w}{ }\PYG{n}{suma\PYGZus{}zakupow}\PYG{+w}{ }\PYG{k}{DESC}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Opis działania:}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Łączy tabele użytkowników, zamówień, pozycji zamówień i produktów
+
+\item {} 
+\sphinxAtStartPar
+Wylicza sumę wydatków każdego użytkownika
+
+\item {} 
+\sphinxAtStartPar
+Sortuje wyniki malejąco
+
+\end{itemize}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Wnioski z analizy EXPLAIN ANALYZE:}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Zapytanie może działać wolno na dużych zbiorach danych bez indeksów
+
+\item {} 
+\sphinxAtStartPar
+Zalecane utworzenie indeksów na kolumnach: \sphinxtitleref{id\_uzytkownika}, \sphinxtitleref{id\_zamowienia}, \sphinxtitleref{id\_produktu}
+
+\end{itemize}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Przykład indeksów (PostgreSQL):}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{k}{INDEX}\PYG{+w}{ }\PYG{n}{idx\PYGZus{}zamowienia\PYGZus{}id\PYGZus{}uzytkownika}\PYG{+w}{ }\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{Zamowienia}\PYG{p}{(}\PYG{n}{id\PYGZus{}uzytkownika}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{k}{INDEX}\PYG{+w}{ }\PYG{n}{idx\PYGZus{}pozycje\PYGZus{}id\PYGZus{}zamowienia}\PYG{+w}{ }\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{PozycjeZamowienia}\PYG{p}{(}\PYG{n}{id\PYGZus{}zamowienia}\PYG{p}{)}\PYG{p}{;}
+\PYG{k}{CREATE}\PYG{+w}{ }\PYG{k}{INDEX}\PYG{+w}{ }\PYG{n}{idx\PYGZus{}pozycje\PYGZus{}id\PYGZus{}produktu}\PYG{+w}{ }\PYG{k}{ON}\PYG{+w}{ }\PYG{n}{PozycjeZamowienia}\PYG{p}{(}\PYG{n}{id\PYGZus{}produktu}\PYG{p}{)}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+Wydajność zapytania można porównać przy użyciu \sphinxtitleref{EXPLAIN ANALYZE}:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{EXPLAIN}\PYG{+w}{ }\PYG{k}{ANALYZE}\PYG{+w}{ }\PYG{k}{SELECT}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Produkty}\PYG{+w}{ }\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{cena}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{100}\PYG{p}{;}
+
+\PYG{k}{EXPLAIN}\PYG{+w}{ }\PYG{k}{ANALYZE}\PYG{+w}{ }\PYG{k}{SELECT}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Produkty}\PYG{+w}{ }\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{nazwa}\PYG{+w}{ }\PYG{k}{LIKE}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}A\PYGZpc{}\PYGZsq{}}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+
+\section{Monitorowanie i optymalizacja}
+\label{\detokenize{rozdzial4/index:monitorowanie-i-optymalizacja}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Regularne stosowanie \sphinxtitleref{EXPLAIN} i \sphinxtitleref{EXPLAIN ANALYZE} umożliwia analizę planów zapytań
+
+\item {} 
+\sphinxAtStartPar
+Indeksy na kolumnach wykorzystywanych w filtrach (\sphinxtitleref{WHERE}, \sphinxtitleref{JOIN}, \sphinxtitleref{ORDER BY}) znacząco poprawiają wydajność
+
+\item {} 
+\sphinxAtStartPar
+W PostgreSQL zaleca się również wykonywanie \sphinxtitleref{ANALYZE} i \sphinxtitleref{VACUUM} w celu utrzymania aktualnych statystyk
+
+\end{itemize}
+
+\sphinxAtStartPar
+Przykład użycia EXPLAIN:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{EXPLAIN}\PYG{+w}{ }\PYG{k}{SELECT}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{Zamowienia}\PYG{+w}{ }\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{status}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}zrealizowane\PYGZsq{}}\PYG{p}{;}
+
+\PYG{k}{EXPLAIN}\PYG{+w}{ }\PYG{k}{ANALYZE}\PYG{+w}{ }\PYG{k}{SELECT}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k}{FROM}\PYG{+w}{ }\PYG{n}{PozycjeZamowienia}\PYG{+w}{ }\PYG{k}{WHERE}\PYG{+w}{ }\PYG{n}{ilosc}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{10}\PYG{p}{;}
+\end{sphinxVerbatim}
+
+
+\section{Podsumowanie}
+\label{\detokenize{rozdzial4/index:podsumowanie}}
+\sphinxAtStartPar
+Analiza pokazała, że baza danych może być skutecznie przenoszona pomiędzy środowiskami SQLite i PostgreSQL z zachowaniem spójności danych. Kluczowym elementem zapewnienia wydajności jest stosowanie indeksów oraz testowanie zapytań przy pomocy narzędzi takich jak \sphinxtitleref{EXPLAIN}. Dobrze zaprojektowane zapytania oraz utrzymana struktura bazy danych pozwalają uniknąć opóźnień i przeciążeń w działaniu systemu sklepu internetowego.
+
+\sphinxstepscope
+
+\sphinxAtStartPar
+“Rozdzia? 5”
+
 
 
 \renewcommand{\indexname}{Index}

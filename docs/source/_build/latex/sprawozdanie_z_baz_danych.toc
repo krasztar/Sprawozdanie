@@ -1,0 +1,14 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Wprowadzenie}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Modele Bazy Danych}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Wprowadzenie}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Model Konceptualny}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Model Logiczny}{5}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Model Fizyczny}{6}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Podsumowanie}{7}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Analiza bazy danych oraz optymalizacja zapytań}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Wstęp}{9}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Migracja danych między SQLite a PostgreSQL}{9}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Analiza zapytania SQLuser\_price}{9}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Monitorowanie i optymalizacja}{10}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Podsumowanie}{10}{section.3.5}%
