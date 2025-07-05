@@ -2,9 +2,14 @@ Rozdział 2 – Podrepozytoria
 ===========================
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Spis treści
+   :maxdepth: 4
+   :caption: Contents:
 
-   # Dodaj tutaj inne pliki rst jeśli istnieją (np. cz1.rst, cz2.rst), albo usuń toctree jeśli niepotrzebny
-
-Tutaj znajduje się treść rozdziału 2, który jest submodułem.
+   Sprzet-dla-bazy-danych/source/index
+   Konfiguracja_baz_danych/index
+   Kontrola_i_konserwacja/kontrola_i_konserwacja
+   Wydajnosc_Skalowanie_i_Replikacja/index
+   repo-wspolne/index
+   bezpieczenstwo/index
+   Partycjonowanie-danych/rozdział 1/index
+   Kopie_zapasowe_i_odzyskiwanie_danych/index
