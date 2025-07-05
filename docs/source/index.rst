@@ -13,11 +13,10 @@ documentation for details.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Spis treści
 
-
-   ../../rozdzial1/index
-   ../../rozdzial2/index
-   ../../rozdzial3/index
-   ../../rozdzial4/index
-   ../../rozdzial5/index
+   rozdzial1/index
+   rozdzial2/index
+   rozdzial3/index
+   rozdzial4/index
+   rozdzial5/index

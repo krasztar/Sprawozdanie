@@ -1,0 +1,21 @@
+[submodule "bezpieczenstwo"]
+	path = bezpieczenstwo
+	url = https://github.com/BlazejUl/bezpieczenstwo
+[submodule "Konfiguracja_baz_danych"]
+	path = Konfiguracja_baz_danych
+	url = https://github.com/Chaiolites/Konfiguracja_baz_danych
+[submodule "Sprzet-dla-bazy-danych"]
+	path = Sprzet-dla-bazy-danych
+	url = https://github.com/oszczeda/Sprzet-dla-bazy-danych
+[submodule "Wydajnosc_Skalowanie_i_Replikacja"]
+	path = Wydajnosc_Skalowanie_i_Replikacja
+	url = https://github.com/Broksonn/Wydajnosc_Skalowanie_i_Replikacja
+[submodule "repo-wspolne"]
+	path = repo-wspolne
+	url = https://github.com/GrzegorzSzczepanek/repo-wspolne
+[submodule "Partycjonowanie-danych"]
+	path = Partycjonowanie-danych
+	url = https://github.com/BartekHen/Partycjonowanie-danych
+[submodule "Kontrola_i_konserwacja"]
+	path = Kontrola_i_konserwacja
+	url = https://github.com/Pi0trM/Kontrola_i_konserwacja
