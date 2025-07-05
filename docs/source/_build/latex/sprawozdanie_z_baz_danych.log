@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.5)  5 JUL 2025 23:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.7.5)  6 JUL 2025 00:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -752,7 +752,7 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count323
 \l__pdf_internal_box=\box120
 )
-No file sprawozdanie_z_baz_danych.aux.
+(sprawozdanie_z_baz_danych.aux)
 \openout1 = `sprawozdanie_z_baz_danych.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
@@ -773,6 +773,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
 LaTeX Font Info:    ... okay on input line 73.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
 LaTeX Font Info:    ... okay on input line 73.
+
 (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count324
@@ -850,12 +851,14 @@ ing.def)))
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 73.
+(sprawozdanie_z_baz_danych.out) (sprawozdanie_z_baz_danych.out)
 \@outlinefile=\write5
 \openout5 = `sprawozdanie_z_baz_danych.out'.
 
 Package hyperref Info: Option `pageanchor' set `false' on input line 81.
 LaTeX Font Info:    Trying to load font information for T1+qhv on input line 81
 .
+
 (C:\Users\kapi5\AppData\Roaming\MiKTeX\tex/latex/tex-gyre\t1qhv.fd
 File: t1qhv.fd 2009/09/25 v1.2 font definition file for T1/qhv
 )<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
@@ -876,10 +879,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 5/AppData/Roaming/MiKTeX/fonts/enc/dvips/tex-gyre/q-ec.enc}] [2
 
 
-]
-No file sprawozdanie_z_baz_danych.toc.
+] (sprawozdanie_z_baz_danych.toc)
 \tf@toc=\write6
 \openout6 = `sprawozdanie_z_baz_danych.toc'.
+
 
 [1
 
@@ -916,8 +919,12 @@ LaTeX Font Info:    Trying to load font information for TS1+txtt on input line
 (C:\Users\kapi5\AppData\Roaming\MiKTeX\tex/latex/txfonts\ts1txtt.fd
 File: ts1txtt.fd 2000/12/15 v3.1
 ) [9]
+[10]
+Chapter 4.
 No file sprawozdanie_z_baz_danych.ind.
-[10] [11] (sprawozdanie_z_baz_danych.aux)
+[11
+
+] (sprawozdanie_z_baz_danych.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -933,30 +940,29 @@ d.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `sprawozdanie_z_baz_danych.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  1361071CFDFF367BEBC31F0A736415F9;2067.
+(rerunfilecheck)             Before: 1361071CFDFF367BEBC31F0A736415F9;2067
+(rerunfilecheck)             After:  019EB214087B44E32115B6CF175D935A;2943.
  ) 
 Here is how much of TeX's memory you used:
- 20055 strings out of 474486
- 359732 string characters out of 5753571
+ 20089 strings out of 474486
+ 360779 string characters out of 5753571
  1962542 words of memory out of 5000000
- 41919 multiletter control sequences out of 15000+600000
+ 41941 multiletter control sequences out of 15000+600000
  606263 words of font info for 76 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
  72i,11n,82p,1216b,659s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\kapi5\AppData\Local\MiKTeX\fonts/pk/modeless/public/txfonts/dpi600
-\tcxtt.pk> <C:\Users\kapi5\AppData\Local\MiKTeX\fonts/pk/modeless/public/txfont
-s/dpi600\t1xbtt.pk> <C:\Users\kapi5\AppData\Local\MiKTeX\fonts/pk/modeless/publ
-ic/txfonts/dpi600\t1xtt.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb><C:/Users/kapi5/AppData/Roaming/MiKTeX/fonts/type1/public/tex-gy
-re/qhvb.pfb><C:/Users/kapi5/AppData/Roaming/MiKTeX/fonts/type1/public/tex-gyre/
-qhvbi.pfb><C:/Users/kapi5/AppData/Roaming/MiKTeX/fonts/type1/public/tex-gyre/qt
-mb.pfb><C:/Users/kapi5/AppData/Roaming/MiKTeX/fonts/type1/public/tex-gyre/qtmr.
-pfb><C:/Users/kapi5/AppData/Roaming/MiKTeX/fonts/type1/public/tex-gyre/qtmri.pf
-b>
-Output written on sprawozdanie_z_baz_danych.pdf (15 pages, 183787 bytes).
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/
+kapi5/AppData/Roaming/MiKTeX/fonts/type1/public/tex-gyre/qhvb.pfb><C:/Users/kap
+i5/AppData/Roaming/MiKTeX/fonts/type1/public/tex-gyre/qhvbi.pfb><C:/Users/kapi5
+/AppData/Roaming/MiKTeX/fonts/type1/public/tex-gyre/qtmb.pfb><C:/Users/kapi5/Ap
+pData/Roaming/MiKTeX/fonts/type1/public/tex-gyre/qtmr.pfb><C:/Users/kapi5/AppDa
+ta/Roaming/MiKTeX/fonts/type1/public/tex-gyre/qtmri.pfb><C:/Users/kapi5/AppData
+/Roaming/MiKTeX/fonts/type1/public/txfonts/t1xbtt.pfb><C:/Users/kapi5/AppData/R
+oaming/MiKTeX/fonts/type1/public/txfonts/t1xtt.pfb><C:/Users/kapi5/AppData/Roam
+ing/MiKTeX/fonts/type1/public/txfonts/tcxtt.pfb>
+Output written on sprawozdanie_z_baz_danych.pdf (15 pages, 191646 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 205 PDF objects out of 1000 (max. 8388607)
+ 33 named destinations out of 1000 (max. 500000)
+ 125 words of extra memory for PDF output out of 10000 (max. 10000000)
 
