@@ -1,0 +1,3 @@
+[submodule "rozdzial2"]
+	path = rozdzial2
+	url = https://github.com/krasztar/Literatura.git
